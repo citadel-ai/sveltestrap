@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/badge/license-MIT-%23bada55&color=7289da)](https://github.com/sveltestrap/sveltestrap/blob/main/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@sveltestrap/sveltestrap?logo=npm&color=cb3837&label=Latest)](https://www.npmjs.com/package/@sveltestrap/sveltestrap)
 
-## Bootstrap 5 Components for Svelte 4+
+## Bootstrap 5 Components for Svelte 5
 
 Sveltestrap is a library designed to simplify the integration of [Bootstrap 5](https://getbootstrap.com) components into your [Svelte](https://svelte.dev) applications. It eliminates the need for Bootstrap component classes, the inclusion of Bootstrap's JavaScript, and reliance on jQuery.
 
