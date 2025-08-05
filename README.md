@@ -21,8 +21,8 @@ If you looking for Svelte 3.x support, you can use the original [sveltestrap](ht
 
 ## Fixes
 
-1. [Fix tooltip animation](/tree/fix-tooltip-animation)
-2. [Fix modal close animation](/tree/fix-modal)
+1. [Fix tooltip animation](https://github.com/citadel-ai/sveltestrap/tree/fix-tooltip-animation)
+2. [Fix modal close animation](https://github.com/citadel-ai/sveltestrap/tree/fix-modal)
 
 ## Install
 
