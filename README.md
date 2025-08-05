@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/badge/license-MIT-%23bada55&color=7289da)](https://github.com/sveltestrap/sveltestrap/blob/main/LICENSE)
 [![npm version](https://img.shields.io/npm/v/@sveltestrap/sveltestrap?logo=npm&color=cb3837&label=Latest)](https://www.npmjs.com/package/@sveltestrap/sveltestrap)
 
-## Bootstrap 5 Components for Svelte 4+
+## Bootstrap 5 Components for Svelte 4+ PLUS Fixes
 
 Sveltestrap is a library designed to simplify the integration of [Bootstrap 5](https://getbootstrap.com) components into your [Svelte](https://svelte.dev) applications. It eliminates the need for Bootstrap component classes, the inclusion of Bootstrap's JavaScript, and reliance on jQuery.
 
@@ -18,6 +18,11 @@ If you looking for Svelte 3.x support, you can use the original [sveltestrap](ht
 [![Discord](https://img.shields.io/discord/1186498806460710973?label=Sveltestrap&logo=discord&color=7289da)](https://discord.gg/VS9T72ucaU)
 
 ---
+
+## Fixes
+
+1. [Fix tooltip animation](https://github.com/citadel-ai/sveltestrap/tree/fix-tooltip-animation)
+2. [Fix modal close animation](https://github.com/citadel-ai/sveltestrap/tree/fix-modal)
 
 ## Install
 

@@ -1,7 +1,7 @@
 {
   "name": "@sveltestrap/sveltestrap",
   "description": "Bootstrap components for Svelte",
-  "version": "7.1.0",
+  "version": "1.0.1",
   "license": "MIT",
   "homepage": "https://sveltestrap.js.org",
   "repository": {
@@ -65,7 +65,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest --run --coverage && open ./coverage/index.html",
     "test:integration": "pnpm --prefix ./tests/app install && npx playwright test",
-    "test:integration:report": "pnpm test:integration && npx playwright show-report"
+    "test:integration:report": "pnpm test:integration && npx playwright show-report",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.1",
