@@ -97,7 +97,7 @@
     // @ts-ignore
     fn({ state }) {
       popperPlacement = state.placement;
-    },
+    }
   };
 
   $: {
@@ -106,7 +106,7 @@
       // @ts-ignore
       popperInstance = createPopper(targetEl, tooltipEl, {
         placement,
-        modifiers: [checkPopperPlacement],
+        modifiers: [checkPopperPlacement]
       });
     }
   }
@@ -203,7 +203,7 @@
     'tooltip',
     `bs-tooltip-${bsPlacement}`,
     animation ? 'fade' : false,
-    isOpen ? 'show' : false,
+    isOpen ? 'show' : false
   );
 
   $: outer = container === 'inline' ? InlineContainer : Portal;
