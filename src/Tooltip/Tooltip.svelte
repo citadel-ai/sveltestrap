@@ -42,12 +42,6 @@
   export let isOpen = false;
 
   /**
-   * Controls the visibility of the tooltip.
-   * @type {boolean}
-   */
-  export let isCreated = false;
-
-  /**
    * The preferred placement of the tooltip.
    * @type {string}
    */
@@ -108,7 +102,7 @@
 
   $: {
     // Only create popper instance once
-    if (!popperInstance && isCreated && tooltipEl) {
+    if (!popperInstance && tooltipEl) {
       // @ts-ignore
       popperInstance = createPopper(targetEl, tooltipEl, {
         placement,
@@ -119,7 +113,6 @@
 
   const open = () => {
     clearTimeout(showTimer);
-    isCreated = true;
     showTimer = setTimeout(() => (isOpen = true), delay);
   };
 
@@ -216,26 +209,24 @@
   $: outer = container === 'inline' ? InlineContainer : Portal;
 </script>
 
-{#if isCreated}
-  <svelte:component this={outer}>
-    <div
-      bind:this={tooltipEl}
-      {...$$restProps}
-      class={classes}
-      {id}
-      role="tooltip"
-      data-bs-theme={theme}
-      data-bs-delay={delay}
-      x-placement={popperPlacement}
-    >
-      <div class="tooltip-arrow" data-popper-arrow />
-      <div class="tooltip-inner">
-        {#if content}
-          {content}
-        {:else}
-          <slot />
-        {/if}
-      </div>
+<svelte:component this={outer}>
+  <div
+    bind:this={tooltipEl}
+    {...$$restProps}
+    class={classes}
+    {id}
+    role="tooltip"
+    data-bs-theme={theme}
+    data-bs-delay={delay}
+    x-placement={popperPlacement}
+  >
+    <div class="tooltip-arrow" data-popper-arrow />
+    <div class="tooltip-inner">
+      {#if content}
+        {content}
+      {:else}
+        <slot />
+      {/if}
     </div>
-  </svelte:component>
-{/if}
+  </div>
+</svelte:component>
