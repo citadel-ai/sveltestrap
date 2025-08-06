@@ -42,12 +42,6 @@
   export let isOpen = false;
 
   /**
-   * Controls the visibility of the tooltip.
-   * @type {boolean}
-   */
-  export let isCreated = false;
-
-  /**
    * The preferred placement of the tooltip.
    * @type {string}
    */
@@ -108,7 +102,11 @@
 
   $: {
     // Only create popper instance once
-    if (!popperInstance && isCreated && tooltipEl) {
+    if (!popperInstance && tooltipEl) {
+      if (popperInstance) {
+        popperInstance.destroy();
+      }
+      
       // @ts-ignore
       popperInstance = createPopper(targetEl, tooltipEl, {
         placement,
@@ -119,8 +117,12 @@
 
   const open = () => {
     clearTimeout(showTimer);
-    isCreated = true;
-    showTimer = setTimeout(() => (isOpen = true), delay);
+    
+    showTimer = setTimeout(() => {
+        isOpen = true;
+      },
+      delay
+    );
   };
 
   const close = () => {
@@ -216,7 +218,6 @@
   $: outer = container === 'inline' ? InlineContainer : Portal;
 </script>
 
-{#if isCreated}
   <svelte:component this={outer}>
     <div
       bind:this={tooltipEl}
@@ -238,4 +239,3 @@
       </div>
     </div>
   </svelte:component>
-{/if}
